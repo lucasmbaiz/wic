@@ -33,7 +33,7 @@ def login(request):
 
 def formulario(request):
     if request.method == 'POST':
-        servicio = servicio(nombre=request.POST['servicio'], camada=request.POST['camada'])
+        servicios = servicios(nombre=request.POST['servicio'], camada=request.POST['camada'])
         servicios.save()
         
         return render(request, "app/Inicio.html")
@@ -45,7 +45,7 @@ def form_con_api(request):
         if mi_formulario.is_valid():
             informacion = mi_formulario.cleaned_data
             
-            servicio = f_servicios(servicio=informacion["servicio"], id_servicio=informacion["camada"])
+            servicios = f_servicios(servicio=informacion["servicio"], id_servicio=informacion["camada"])
             servicios.save()
             
             return render(request, "app/Inicio.html")
