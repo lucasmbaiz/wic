@@ -33,8 +33,8 @@ def login(request):
 
 def formulario(request):
     if request.method == 'POST':
-        servicios = servicios(nombre=request.POST['servicio'], camada=request.POST['camada'])
-        servicios.save()
+        servicio = servicio(nombre=request.POST['servicio'], camada=request.POST['camada'])
+        servicio.save()
         
         return render(request, "app/Inicio.html")
     return render(request, "app/formulario.html")
