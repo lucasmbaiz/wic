@@ -47,7 +47,7 @@ def form_con_api(request):
             
             servicios = f_servicios(servicio=informacion["servicio"], id_servicio=informacion["camada"])
             servicios.save()
-            
+                
             return render(request, "app/Inicio.html")
             
     else:
