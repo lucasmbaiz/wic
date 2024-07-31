@@ -1,0 +1,72 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+            <!-- Primera sección -->
+            <section class="py-5 bg-light" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'app/assets/01.jpg' %}" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">¿QUIENES SOMOS?</h2>
+                            <p class="lead fw-normal text-muted mb-0">Una startup financiera que pretende ayudar a las personas a lograr su desarrollo financiero y así cumplir sus metas a través del ahorro, la planificación y la inversión. Vos podés gestionar tus ahorros de una manera simple, a través de los instrumentos financieros de las mejores empresas a traves del mercado local e internacional.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Segunda sección -->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'app/assets/02.jpg' %}" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">UN ALIADO ESTRATEGICO!</h2>
+                            <p class="lead fw-normal text-muted mb-0">Tenemos convenio con una de las más prestigiosas firmas de bolsa del país, donde se negocian una gran variedad de instrumentos financieros. Además, podés invertir tu dinero tanto en Argentina como en Estados Unidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Equipo -->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">NUESTRO EQUIPO</h2>
+                        <p class="lead fw-normal text-muted mb-5">
+                            Formado por expertos que trabajan en conjunto para ofrecerte soluciones financieras personalizadas y efectivas.</p>
+                    </div>
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid circle mb-4 px-4" src="{% static 'app/assets/team/lucas.jpeg' %}" alt="..." />
+                                <h5 class="fw-bolder">Lucas M. Baiz</h5>
+                                <div class="fst-italic text-muted">Financial Advisor - Founder &amp; CEO</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid circle mb-4 px-4" src="{% static 'app/assets/team/chica2.jpeg' %}" alt="..." />
+                                <h5 class="fw-bolder">Agustina Rudi</h5>
+                                <div class="fst-italic text-muted">Data &amp; Marketing</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <img class="img-fluid circle mb-4 px-4" src="{% static 'app/assets/team/chica1.jpeg' %}" alt="..." />
+                                <h5 class="fw-bolder">Julieta Perez</h5>
+                                <div class="fst-italic text-muted">Financial Advisor - Market Research</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="text-center">
+                                <img class="img-fluid circle mb-4 px-4" src="{% static 'app/assets/team/chico.jpeg' %}" alt="..." />
+                                <h5 class="fw-bolder">Martin Parga</h5>
+                                <div class="fst-italic text-muted">Financial Advisor - Assets Analyst</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+{% endblock main %}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>WICA | Advisors</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'app/css/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#!">Wealth Invest Capital</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Inicio'%}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Login'%}">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Features section-->
+        
+        <!-- Section 1-->
+        <hr style="border-top: 1px solid grey;">
+        <section id="scroll">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid " src="{% static 'app/assets/07.jpg' %}" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">   
+                        <div class="p-5">
+                            <h2 class="display-4">¿Qué hacemos?</h2>
+                            <p>Primero, lo primero: Te entrevistamos, escuchamos que es lo que buscas en el ahorro. Luego, a través de un test determinamos que "Tipo de inversor" sos. Es decir, que tanto querés arriesgarte, cuanto querés invertir y en que tiempo. Ahora, pensamos en un plan!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 2-->
+        <hr style="border-top: 1px solid grey;">
+        <section id="scroll">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid " src="{% static 'app/assets/01.jpg' %}" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">   
+                        <div class="p-5">
+                            <h2 class="display-4">¿Cómo lo hacemos?</h2>
+                            <p>Tenemos un pack para cada tipo de inversor o ahorrista. Pensamos en las mejores estrategias de inversión y ahorro, a mediano y largo plazo. Es importante que entiendas que vos podés aprender, que estas alternativas también son para vos. Por eso estamos nosotros.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 3-->
+        <hr style="border-top: 1px solid grey;">
+        <section id="scroll">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid " src="{% static 'app/assets/05.jpg' %}" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">   
+                        <div class="p-5">
+                            <h2 class="display-4">Tenemos un plan!</h2>
+                            <p>Nuestro equipo planifica de forma constante para mantener el rumbo hacia tus objetivos, ajustando y corrigiendo cualquier desvío en el camino. Estamos para guiarte y garantizar que cada decisión esté orientada a obtener los mejores resultados posibles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <a class="btn btn-primary btn-lg" href="{% url 'Suscripciones'%}" style="margin-bottom: -10px;">Contratar</a>
+            </div>
+        </section> 
+        <hr style="border-top: 0px solid grey;">

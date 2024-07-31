@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<!-- Features section-->
+<section class="py-5 border-bottom" id="features">
+    <h1 class="fw-bolder mb-3" style="text-align: center;">SERVICIOS</h1>
+<p class="lead fw-normal text-muted mb-4" style="text-align: center;">Creemos que la educación, la asesoría personalizada y el seguimiento constante son el factor clave del éxito.</p>
+    <hr style="border-top: 1px solid grey;">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                <h2 class="h4 fw-bolder">EDUCACIÓN FINANCIERA PERSONALIZADA</h2>
+                <p style="text-align: justify;">Aprendé a ordenar tu situación financiera de manera simple y efectiva. Esto te permitirá tomar decisiones informadas con metas claras y alcanzables aprovechando oportunidades para hacer crecer tu capital a largo plazo.</p>
+                <a class="text-decoration-none" href="{% url 'Activos'%}">
+                    Leer más
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                <h2 class="h4 fw-bolder">GESTIÓN Y ASESORÍA FINANCIERA</h2>
+                <p style= "text-align: justify;">Brindamos asesoría financiera personalizada, ofreciéndote la oportunidad de invertir en una extensa gama de instrumentos financieros, que incluyen opciones de renta fija, variable y mixta. Te ayudamos a hacer crecer tu capital de manera segura y efectiva.</p>
+                <a class="text-decoration-none" href="{% url 'Activos'%}">
+                    Leer más
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                <h2 class="h4 fw-bolder"> PLANIFICACIÓN Y SEGUIMIENTO FINANCIERO</h2>
+                <p style="text-align: justify;">Alcanza tus metas económicas con planificación, proyección y seguimiento constante. Te ayudamos en cada paso, ajustando estrategias y realizaremos un seguimiento de tus progresos.</p>
+                <a class="text-decoration-none" href="{% url 'Activos'%}">
+                    Leer más
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <a class="btn btn-primary btn-lg" href="{% url 'Suscripciones'%}" style="margin-bottom: -10px;">Contratar</a>
+    </div>
+</section>
+
+
+
+
+{% endblock main %}
