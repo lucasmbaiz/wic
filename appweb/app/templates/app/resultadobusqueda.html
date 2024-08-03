@@ -1,0 +1,8 @@
+<p> Estamos buscando el :{{camada}}</p>
+{% if servicios %}
+<ul>
+{% for sercicios in servicios %}
+    <li> {{servicios.nombre}}</li>
+    <li> {{servicios.camada}}</li>
+{% endfor %}
+</ul>

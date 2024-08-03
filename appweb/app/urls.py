@@ -15,5 +15,5 @@ urlpatterns = [
     path('busqueda_camada/', views.busqueda_camada, name='Busqueda_camada'),
     path('buscar/', views.buscar),
     path('buscar_form_con_api/', views.buscar_form_con_api, name='buscar_form_con_api'), #<<HASTA ACA VENIMOS BIEN>>
-    path('mostrar_servicios/', views.mostrar_servicios, name="mostrar_servicios")
+    path('mostrar_servicios/', views.mostrar_servicios, name='mostrar_servicios')
 ]

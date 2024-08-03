@@ -110,7 +110,7 @@ def f_contacto(request):
         form = contactform(request.POST)
         if form.is_valid():
             contactform.save()
-            return redirect('app/Inicio.html')  # Redirige a una página de éxito después de guardar
+            return redirect('app/Inicio.html')  # Redirige a una página después de guardar
     else:
         form = contactform()
     return render(request, 'app/Contacto.html', {'form': form})
