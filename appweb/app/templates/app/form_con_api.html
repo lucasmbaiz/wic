@@ -28,10 +28,12 @@
         input[type="text"], input[type="submit"] {
             margin: 5px 0;
         }
+
+        
     </style>
 </head>
 <body>
-<form action="/app/form_con_api/" method="POST">
+<form action="/app/mostrar_servicios/" method="POST">
         {% csrf_token %}
         <p>Servicio: <input type="text" name="servicio"></p>
         <p>Camada: <input type="text" name="camada"></p>

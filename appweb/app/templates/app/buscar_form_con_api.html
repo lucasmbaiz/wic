@@ -16,6 +16,21 @@
     </head>
     <body>
         <!-- Responsive navbar-->
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="description" content="" />
+            <meta name="author" content="" />
+            <title>Wealth Invest Capital</title>
+            <!-- Favicon-->
+            <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+            <!-- Bootstrap CSS-->
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+            <!-- Custom Stylesheet-->
+            <link href="{% static 'app/css/styles.css'%}" rel="stylesheet">
+        </head>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <a class="navbar-brand" href="{% url 'Inicio'%}">Wealth Invest Capital</a>
@@ -32,50 +47,45 @@
                 </div>
             </div>
         </nav>
+    </head>
+        <!-- Resto del contenido -->
         
-        {% block main %}
-        <!DOCTYPE html>
-        <html lang="es">
-        <head>
-        <meta charset="UTF-8">
-        <title>Formulario de Búsqueda</title>
-        <style>
-            form {
-                max-width: 400px; /* Establece un ancho máximo para el formulario */
-                margin: 50px auto; /* Centra el formulario y aplica márgenes */
-                padding: 20px;
-                border: 1px solid #ccc;
-                background-color: #f9f9f9;
-            }
-        
-            input[type="number"], input[type="submit"] {
-                width: 90%; /* Ajusta el ancho de los inputs a un 90% del ancho del formulario */
-                padding: 10px;
-                margin: 10px 0;
-                border: 1px solid #ddd;
-            }
-        
-            input[type="submit"] {
-                background-color: #4CAF50;
-                color: white;
-                cursor: pointer;
-            }
-        
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
-        </style>
-        </head>
-        <body>
-        
-        <form action="/app/buscar_form_con_api" method="GET">
-            <input type="number" name="camada" id="camada" placeholder="Ingrese número...">
-            <input type="submit" value="Buscar">
-        </form>
-        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         </body>
         </html>
         
+        {% block title %} Buscar Servicio {% endblock title %}
+        
+        <style>
+            /* Estableciendo márgenes generales */
+            body {
+                margin: 20px;
+            }
+            
+            /* Aplicando márgenes específicos al formulario */
+            form {
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+    
+            /* Aplicando márgenes a los elementos internos del formulario */
+            input[type="text"], input[type="submit"] {
+                margin: 5px 0;
+            }
+        </style>
+
+        {% block main %}
+
+        <form action="" method='POST'>
+            {% csrf_token %}
+            <table>
+                {{ mi_formulario.as_table}}
+            </table>
+            <input type="number" name="camada" id="camada" placeholder="Ingrese número...">
+            <input type="submit" value="Enviar">
+        </form>
 
         {% endblock main %}
         
