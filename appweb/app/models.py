@@ -5,7 +5,7 @@ class servicios(models.Model):
     servicio = models.CharField(max_length=40)
     id_servicio = models.IntegerField()
     def __str__(self):
-        return self.nombre
+        return self.servicios
 
 class suscripciones(models.Model):
     suscripcion = models.CharField(max_length=40)

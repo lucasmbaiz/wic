@@ -47,14 +47,15 @@
                 </div>
             </div>
         </nav>
-        <p> Estamos buscando el :{{camada}}</p>
-        {% if servicios %}
+    {% if servicios %}
         <ul>
-        {% for sercicios in servicios %}
-            <li> {{servicios.nombre}}</li>
-            <li> {{servicios.camada}}</li>
+        {% for servicio in servicios %}
+            <li>{{ servicio.nombre }} - Camada: {{ paciente.camada }}</li>
         {% endfor %}
         </ul>
+    {% else %}
+        <p>No se encontraron servicios.</p>
+    {% endif %}
     </head>
         <!-- Resto del contenido -->
         

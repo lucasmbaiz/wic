@@ -1,5 +1,6 @@
 from django import forms
 from django.db import models
+from .models import contactform
 
 class formulario(forms.Form):
     
@@ -25,8 +26,6 @@ class BuscaServicioForm(forms.Form):
     # def __str__(self):
         # return self.name
 # Este ultimo es para el html del contacto
-
-from .models import contactform
 
 class contactform(forms.Form):
     class Meta:

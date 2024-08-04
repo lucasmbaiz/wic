@@ -56,38 +56,20 @@
         </body>
         </html>
         
-        {% block title %} Buscar Servicio {% endblock title %}
         
-        <style>
-            /* Estableciendo márgenes generales */
-            body {
-                margin: 20px;
-            }
-            
-            /* Aplicando márgenes específicos al formulario */
-            form {
-                margin-top: 30px;
-                margin-bottom: 30px;
-            }
-    
-            /* Aplicando márgenes a los elementos internos del formulario */
-            input[type="text"], input[type="submit"] {
-                margin: 5px 0;
-            }
-        </style>
+{% block main %}
 
-        {% block main %}
+    {% if servicios %}
+        <ul>
+        {% for servicio in servicios %}
+            <li>{{ servicio.servicio }} | ID: {{ servicio.id_servicio }}</li>  # Ajuste aquí
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron servicios.</p>
+    {% endif %}
 
-        <form action="" method='POST'>
-            {% csrf_token %}
-            <table>
-                {{ mi_formulario.as_table}}
-            </table>
-            <input type="number" name="camada" id="camada" placeholder="Ingrese número...">
-            <input type="submit" value="Buscar">
-        </form>
-
-        {% endblock main %}
+{% endblock main %}
         
         <!-- Footer-->
         <!DOCTYPE html>
