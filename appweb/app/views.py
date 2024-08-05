@@ -4,8 +4,7 @@ from app.forms import formulario as f_formulario
 from .models import servicios as f_servicios
 from django.shortcuts import render, redirect
 from .forms import contactform
-from app.forms import BuscaServicioForm
-from .models import servicios
+from .models import contactform as ModelContactForm  # Importa el modelo correcto
 
 
 def inicio(request):
@@ -73,18 +72,23 @@ def mostrar_servicios(request):
 
 def buscar_form_con_api(request):
     query = request.GET.get('q', '')
-    servicios = servicios.objects.filter(servicio__icontains=query)  # Ahora 'servicios' hace referencia a la clase
-    return render(request, 'buscar_form_con_api.html', {'servicios': servicios})
+    servicios = f_servicios.objects.filter(servicio__icontains=query)  # Ahora 'servicios' hace referencia a la clase
+    return render(request, 'app/buscar_form_con_api.html', {'servicios': servicios})
 
-
-def f_contacto(request):
-    if request.method == 'GET':
-        form = contactform(request.GET)
+def fcontactform(request):
+    if request.method == 'POST':
+        form = contactform(request.POST)
         if form.is_valid():
-            contactform.save()
-            return redirect('app/Inicio.html')  # Redirige a una página después de guardar
+            # Guarda los datos del formulario en la base de datos
+            ModelContactForm.objects.create(
+                Nombre=form.cleaned_data['Nombre'],
+                Apellido=form.cleaned_data['Apellido'],
+                Email=form.cleaned_data['Email'],
+                Telefono=form.cleaned_data['Telefono'],
+                Mensaje=form.cleaned_data['Mensaje']
+            )
+            # Redirige a la página de inicio después de guardar
+            return redirect('app/Inicio')  # Asegúrate de que 'app_Inicio' sea la URL correcta para tu página de inicio
     else:
         form = contactform()
     return render(request, 'app/Contacto.html', {'form': form})
-
-# Este ultimo es para la pagina de contacto

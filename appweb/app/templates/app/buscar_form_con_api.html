@@ -48,7 +48,7 @@
             </div>
         </nav>
     </head>
-        <!-- Resto del contenido -->
+<!-- Resto del contenido -->
         
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -56,22 +56,61 @@
         </body>
         </html>
         
+<!-- VISTA Y CODIGO DEL FORMULARIO DE BUSQUEDA -->
         
-{% block main %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Disponibles</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
 
-    {% if servicios %}
-        <ul>
-        {% for servicio in servicios %}
-            <li>{{ servicio.servicio }} | ID: {{ servicio.id_servicio }}</li>  # Ajuste aquí
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No se encontraron servicios.</p>
-    {% endif %}
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
 
-{% endblock main %}
-        
-        <!-- Footer-->
+        .list-group-item {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .lead {
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Servicios Disponibles</h2>
+        <form method="get" class="form-inline mb-4">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" name="q">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+        {% if servicios %}
+            <ul class="list-group">
+            {% for servicio in servicios %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ servicio.servicio }}
+                    <span>ID: {{ servicio.id_servicio }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="lead">No se encontraron servicios.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+<!-- FOOTER -->
         <!DOCTYPE html>
         <html lang="es">
         <head>
@@ -142,9 +181,9 @@
             </footer>
         </body>
         </html>
-        <!-- Bootstrap core JS-->
+<!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
+<!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->

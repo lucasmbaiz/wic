@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 class servicios(models.Model):
     servicio = models.CharField(max_length=40)
@@ -37,4 +36,4 @@ class contactform(models.Model): # Este es para el formulario de contacto
     Mensaje = models.TextField(max_length=40, default='')
 
     def __str__(self):
-        return self.Nombre
+        return self.contactform
