@@ -1,6 +1,6 @@
 from django import forms
 from django.db import models
-from .models import contactform
+from .models import Contacto
 
 class formulario(forms.Form):
     
@@ -16,18 +16,8 @@ class BuscaServicioForm(forms.Form):
 
 # Hasta aca venimos bien
 
-# class clientes(forms.Form):
-    # Nombre = models.CharField(max_length=40)
-    # Apellido = models.CharField(max_length=40)
-    # Email = models.EmailField(max_length=40)
-    # Telefono = models.CharField(max_length=40)
-    # Mensaje = models.TextField(max_length=40)
-
-    # def __str__(self):
-        # return self.name
-# Este ultimo es para el html del contacto
-
-class contactform(forms.Form):
+class contactform(forms.ModelForm):
     class Meta:
-        model = contactform
-        fields = ['Nombre', 'Apellido' 'Email', 'Telefono', 'Mensaje']
+        model = Contacto
+        # fields = ['Nombre', 'Apellido', 'Email', 'Telefono', 'Mensaje']
+        fields = '__all__'

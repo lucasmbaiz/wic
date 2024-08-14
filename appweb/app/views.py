@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from app.forms import formulario as f_formulario
 from .models import servicios as f_servicios
-from django.shortcuts import render, redirect
 from .forms import contactform
-from .models import contactform as ModelContactForm  # Importa el modelo correcto
-
 
 def inicio(request):
     return render(request, "app/Inicio.html")
@@ -16,6 +14,7 @@ def empresa(request):
 def servicios(request):
     return render(request, "app/Servicios.html")
 
+@login_required
 def suscripciones(request):
     return render(request, "app/Suscripciones.html")
 
@@ -24,7 +23,7 @@ def contacto(request):
 
 def activos(request):
     return render(request, "app/activos.html")
-
+    
 def clientes(request):
     return render(request, "app/clientes.html")
 
@@ -47,7 +46,6 @@ def form_con_api(request):
             
             servicios = f_servicios(servicio=informacion["servicio"], id_servicio=informacion["camada"])
             servicios.save()
-
             return render(request, "app/Inicio.html")
             
     else:
@@ -63,8 +61,6 @@ def buscar(request):
     
     return HttpResponse(respuesta)
 
-# Hasta acá venimos genial
-
 def mostrar_servicios(request):
     return render(request, "app/mostrar_servicios.html")
 
@@ -75,20 +71,18 @@ def buscar_form_con_api(request):
     servicios = f_servicios.objects.filter(servicio__icontains=query)  # Ahora 'servicios' hace referencia a la clase
     return render(request, 'app/buscar_form_con_api.html', {'servicios': servicios})
 
-def fcontactform(request):
+def contacto(request):
+    data = {
+        'form': contactform()
+    }
     if request.method == 'POST':
-        form = contactform(request.POST)
-        if form.is_valid():
-            # Guarda los datos del formulario en la base de datos
-            ModelContactForm.objects.create(
-                Nombre=form.cleaned_data['Nombre'],
-                Apellido=form.cleaned_data['Apellido'],
-                Email=form.cleaned_data['Email'],
-                Telefono=form.cleaned_data['Telefono'],
-                Mensaje=form.cleaned_data['Mensaje']
-            )
-            # Redirige a la página de inicio después de guardar
-            return redirect('app/Inicio')  # Asegúrate de que 'app_Inicio' sea la URL correcta para tu página de inicio
-    else:
-        form = contactform()
-    return render(request, 'app/Contacto.html', {'form': form})
+        formulario = contactform(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Mensaje enviado con éxito"
+        else: 
+            data["form"] = formulario
+    
+    return render(request, 'app/contacto.html', data)
+
+# Hasta acá venimos genial

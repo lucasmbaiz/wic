@@ -3,25 +3,58 @@
 {% load static %}
 
 {% block main %}
+
 <!-- Header I -->
-<header class="bg-dark py-5">
-    <div class="container px-5">
-        <div class="row gx-5 align-items-center justify-content-center">
-            <div class="col-lg-8 col-xl-7 col-xxl-6">
+<header class="bg-dark py-6">
+    <br>
+    <div class="container px-4">
+        <div class="row gx-4 align-items-center justify-content-center">
+            <div class="col-lg-8 col-xl-6 col-xxl-6">
                 <div class="my-5 text-center text-xl-start">
-                    <h1 class="display-5 fw-bolder text-white mb-2">Lleva tus finanzas al próximo nivel</h1>
-                    <p class="lead fw-normal text-white-50 mb-4">Descubrí como mejorar tu futuro financiero con nuestras soluciones y asesoría especializada. Invertir en educación financiera es la clave para que puedas tomar decisiones informadas y alcanzar tus metas económicas. Además, vas a invertir tu dinero a traves de una de las sociedades de bolsa más prestigiosas del país, lider en comercialización de valores negociables. Suscribite y asegura tu camino hacia la libertad financiera!</p>
+                    <h1 class="display-4 fw-bolder text-white mb-2">Lleva tus finanzas al próximo nivel</h1>
+                    <p class="lead fw-normal text-white-50 mb-4">Descubrí como mejorar tu futuro financiero con nuestras soluciones y asesoría especializada. Suscribite y asegura tu camino hacia la libertad financiera!</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'Suscripciones'%}">Contratar</a>
-                        <a class="btn btn-outline-light btn-lg px-4" href="#Empresa">Quienes somos</a>
+                        <head>
+                            <meta charset="UTF-8">
+                            <title>Ejemplo de Botones Centrados</title>
+                            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+                            <style>
+                                .button-container {
+                                    display: flex;
+                                    justify-content: center; /* Centra los elementos horizontalmente */
+                                    align-items: center; /* Centra los elementos verticalmente */
+                                    height: 100px; /* Altura del contenedor para demostrar centrado vertical */
+                                }
+                            </style>
+                            </head>
+                            <body>
+                            
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <div class="button-container">
+                                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'Suscripciones'%}">Contratar</a>
+                                            <a class="btn btn-outline-light btn-lg px-4" href="#Empresa">Quienes somos</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+                            </body>
+                            </html>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img src="{% static 'app/assets/010.jpg' %}" alt="..." /></div>
+            <div class="col-xl-6 col-xxl-6 d-none d-xl-block text-center"><img src="{% static 'app/assets/010.jpg' %}" alt="..." /></div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
 </header>
-
 <!-- Header II -->
             <header class="py-5">
                 <div class="container px-5">
@@ -32,7 +65,7 @@
                             <div class="text-center my-50">
                                 <h1 class="fw-bolder mb-3">Nuestra misión es ayudarte a cumplir tus objetivos financieros</h1>
                                 <p class="lead fw-normal text-muted mb-4">Nuestro enfoque se centra en brindarte herramientas efectivas y asesoramiento integral para que puedas tomar decisiones estratégicas, optimizando tus recursos y maximizando tus oportunidades. Nos comprometemos a trabajar con vos para que logres tus metas financieras con confianza y éxito.</p>
-                                <a class="btn btn-primary btn-lg" href="{% url 'Empresa'%}">Conocenos</a>
+                                <a class="btn btn-primary btn-lg center-align" href="{% url 'Empresa'%}">Conocenos</a>
                             </div>
                         </div>
                     </div>
@@ -77,5 +110,32 @@
         </div>
     </div>
 </section>
+<br>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+<!-- Asegúrate de incluir Bootstrap CSS antes de tu CSS personalizado -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn-success {
+            background-color: #28a745; /* Color verde personalizado */
+            border-color: #198754; /* Color del borde personalizado */
+        }
+        .btn-success:hover {
+            background-color: #218838; /* Color de fondo al pasar el mouse */
+            border-color: #1c7430; /* Color del borde al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+<div class="text-center my-50">
+    <a class="btn btn-success btn-lg" href="https://wa.me/1234567890">Dejanos un whatsapp!</a>
+</div>
+<br>
+<br>
+
 
 {% endblock main %}

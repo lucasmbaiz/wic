@@ -1,0 +1,53 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block main %}
+{% load crispy_forms_tags %}
+
+
+
+<br>
+<br>
+<div class="d-flex flex-column align-items-center justify-content-center"><p class="lead mb-0">Sabemos de inversiones, tenemos una propuesta para vos!</p>
+
+    <p class="d-flex flex-column align-items-center justify-content-center">
+
+        <p class="fs-5 fw-bold align-end">{{ msg_register }}</p>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+            {{ form }}
+            </table>
+            <h2></h2>
+            <input type="submit" class="btn btn-primary" text value="Registrarse">
+        </form>
+    </div>
+</div>
+
+<br>
+
+<!-- COMENTAIRO INFERIOR -->
+
+<hr style="border-top: 1px solid grey;">
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid " src="{% static 'app/assets/megafono.png' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-3">   
+                    <div class="p-5">
+                        <h2 class="display-4">¿Por qué invertir?</h2>
+                        <br>
+                        <p>Porque es fundamental para el crecimiento personal y financiero, ya que ofrece seguridad financiera para el futuro, protección contra la inflación, diversificación de ingresos, gestión eficaz del riesgo mediante la diversificación, y participación en el mercado de valores, lo que contribuye a la acumulación de riqueza a largo plazo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+{% endblock main %}

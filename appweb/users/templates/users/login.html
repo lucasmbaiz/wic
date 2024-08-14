@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+
+{% load crispy_forms_filters %}
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block main %}
+
+
+<br>
+<div class="text-center mb-5">
+    <div class="text-center mb-3">
+    <br>
+        <p class="lead mb-0">UPS..Debés loguearte para visualizar el sitio completo!</p>
+    </div>
+    <div class="container mt-2">
+</div>
+    <div class="d-flex justify-content-center">
+
+        <div class="d-flex flex-column">
+
+            <p class="fs-5 fw-bold">{{ msg_login }}</p>
+
+            <form action= "" method="POST">
+                {% csrf_token %}
+                <table>
+                {{ form.as_table }}
+                </table>
+                <input type="submit" value="iniciar sesion">
+            </form>
+        </div>
+    </div>
+
+    <h2>
+    </h2>
+
+    <p class="lead mb-0">¿Aún no tenés una cuenta?</p><a class="text-decoration-none" href="{% url 'Register'%}"> Registrate
+    </a>
+
+<!-- COMENTARIO INFERIOR -->
+
+<br>    
+<hr style="border-top: 1px solid grey;">
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid " src="{% static 'app/assets/Login.png' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">   
+                    <div class="p-5">
+                        <h2 class="display-4">¿Qué hacemos?</h2>
+                        <br>
+                        <p>Te enseñamos a ordenar tu situación financiera de manera simple y efectiva. Esto te permitirá tomar decisiones informadas con metas claras y alcanzables aprovechando oportunidades para hacer crecer tu capital a largo plazo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<br>
+{% endblock main %}

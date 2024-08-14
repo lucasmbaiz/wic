@@ -28,12 +28,12 @@ class formulario(models.Model):
     servicio = models.CharField(max_length=40)
     camada = models.IntegerField()
 
-class contactform(models.Model): # Este es para el formulario de contacto
+class Contacto(models.Model): # Este es para el formulario de contacto
     Nombre = models.CharField(max_length=40)
     Apellido = models.CharField(max_length=40)
     Email = models.EmailField(max_length=40)
     Telefono = models.CharField(max_length=40)
-    Mensaje = models.TextField(max_length=40, default='')
+    Mensaje = models.TextField(max_length=400, default='')
 
     def __str__(self):
-        return self.contactform
+        return self.Nombre

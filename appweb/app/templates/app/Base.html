@@ -25,7 +25,7 @@
             <meta name="author" content="" />
             <title>Wealth Invest Capital</title>
             <!-- Favicon-->
-            <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+            <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
             <!-- Bootstrap CSS-->
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
             <!-- Custom Stylesheet-->
@@ -42,7 +42,24 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Empresa'%}">Empresa</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Suscripciones'%}">Suscripciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Login'%}">Login</a></li>
+                        
+                        <div  class="dropdown">
+                            <a class="btn btn-primary dropdown-toogle" href"#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Mi Cuenta
+                            </a>
+                            {% if request.user.is_authenticated %}
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'Logout'%}">Cerrar sesión</a></li>
+                            
+                                </ul>
+                            {% else %}
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item" href="{% url 'Register' %}">Registrate</a></li>
+                            </ul>
+                            {% endif %}
+                        </div>
                     </ul>
                 </div>
             </div>
