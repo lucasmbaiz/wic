@@ -38,11 +38,27 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Inicio'%}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Servicios'%}">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Empresa'%}">Empresa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Servicios'%}">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Suscripciones'%}">Suscripciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Login'%}">Login</a></li>
+                        <div  class="dropdown">
+                            <a class="btn btn-primary dropdown-toogle" href"#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Mi Cuenta
+                            </a>
+                            {% if request.user.is_authenticated %}
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'Logout'%}">Cerrar sesión</a></li>
+                            
+                                </ul>
+                            {% else %}
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item" href="{% url 'Register' %}">Registrate</a></li>
+                            </ul>
+                            {% endif %}
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -108,6 +124,12 @@
         {% endif %}
     </div>
 </body>
+<br>
+<div class="text-center my-50">
+    <a class="btn btn-primary btn-lg" href="/app/Suscripciones">Suscribirse</a>
+</div>
+<br>
+<br>
 </html>
 
 <!-- FOOTER -->

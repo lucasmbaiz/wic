@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 
 class UserRegisterForm(UserCreationForm):
@@ -16,3 +16,17 @@ class UserRegisterForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2"]
         
         help_text = {k: "" for k in fields}
+
+# Hasta aca vamos bien
+
+class UserEditForm(UserChangeForm):
+    password = None
+    first_name = forms.CharField(label="Nombre:" )
+    last_name = forms.CharField(label="Apellido:" )
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]
+        
+        # help_text = {k: "" for k in fields}

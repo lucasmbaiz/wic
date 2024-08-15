@@ -38,11 +38,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Inicio'%}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Servicios'%}">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Empresa'%}">Empresa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Servicios'%}">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Suscripciones'%}">Suscripciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
-                        
                         <div  class="dropdown">
                             <a class="btn btn-primary dropdown-toogle" href"#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -51,6 +50,7 @@
                             {% if request.user.is_authenticated %}
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{% url 'Logout'%}">Cerrar sesión</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'EditarUsuario'%}">Editar Usuario</a></li>
                             
                                 </ul>
                             {% else %}

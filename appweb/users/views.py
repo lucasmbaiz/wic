@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
-from users.forms import UserRegisterForm
-
-
+from users.forms import UserRegisterForm, UserEditForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import PasswordChangeView
+from django.urls import reverse_lazy
 
 def login_request(request):
     msg_login = ""
@@ -44,3 +46,22 @@ def register(request):
 
     return render(request, "users/registro.html", context)
 
+# Hasta aca vamos bien
+
+@login_required
+def editar_usuario(request):
+    usuario = request.user
+    
+    if request.method == "POST":
+        formulario = UserEditForm(request.POST, instance=usuario)  # Corrección aquí
+        if formulario.is_valid():
+            formulario.save()
+            return render(request, "app/Inicio.html")
+    else:
+        formulario = UserEditForm(instance=usuario)  # Y aquí
+    
+    return render(request, "users/editar_usuario.html", {"form": formulario })
+
+class CambiarPassView(LoginRequiredMixin, PasswordChangeView):
+    template_name = "users/cambiar_pass.html"
+    success_url = reverse_lazy("EditarUsuario")
