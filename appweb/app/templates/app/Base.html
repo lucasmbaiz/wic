@@ -47,7 +47,8 @@
                             aria-expanded="false">
                             Mi Cuenta
                             </a>
-                            {% if request.user.is_authenticated %}
+                            {% if request.user.username %}
+                                <img src="{{request.user.avatar.imagen.url}}" alt="" height="40px">
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="{% url 'Logout'%}">Cerrar sesión</a></li>
                                     <li><a class="dropdown-item" href="{% url 'EditarUsuario'%}">Editar</a></li>
