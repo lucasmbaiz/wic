@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
-from app import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -8,3 +9,5 @@ urlpatterns = [
     path('vbc/', include('vbc.urls')),
     path('users/', include('users.urls'))
 ]
+# Para archivos estaticos
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
