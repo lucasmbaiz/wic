@@ -43,16 +43,22 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Suscripciones'%}">Suscripciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
                         <div  class="dropdown">
-                            <a class="btn btn-primary dropdown-toogle" href"#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Mi Cuenta
-                            </a>
+
                             {% if request.user.is_authenticated %}
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{% url 'Logout'%}">Cerrar sesión</a></li>
+
+                            <a class="btn btn-primary dropdown-toogle" href"#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ request.user.first_name }}
+                            </a>
                             
+                                <img src="{{request.user.avatar.imagen.url}}" alt="" height="40px">
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'Logout'%}">Cerrar Sesión</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'EditarUsuario'%}">Editar</a></li>
                                 </ul>
                             {% else %}
+                            <a class="btn btn-primary dropdown-toogle" href"#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cuentas
+                                </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar Sesión</a></li>
                                 <li><a class="dropdown-item" href="{% url 'Register' %}">Registrate</a></li>

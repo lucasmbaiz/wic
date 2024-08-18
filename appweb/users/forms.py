@@ -23,10 +23,11 @@ class UserEditForm(UserChangeForm):
     password = None
     first_name = forms.CharField(label="Nombre:" )
     last_name = forms.CharField(label="Apellido:" )
-    email = forms.EmailField()
+    email = forms.EmailField(label="Email", required=False)
+    imagen = forms.ImageField(label="Avatar", required=False)
 
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email"]
+        fields = ["first_name", "last_name", "email", "imagen"]
         
         # help_text = {k: "" for k in fields}

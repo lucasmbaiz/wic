@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
+from users.models import Avatar
 
 def login_request(request):
     msg_login = ""
@@ -53,8 +54,14 @@ def editar_usuario(request):
     usuario = request.user
     
     if request.method == "POST":
-        formulario = UserEditForm(request.POST, instance=usuario)  # Corrección aquí
+        formulario = UserEditForm(request.POST, request.FILES, instance=usuario)  # Corrección aquí
         if formulario.is_valid():
+            
+            if formulario.cleaned_data.get("imagen"):
+                avatar = Avatar(user=usuario, imagen=formulario.cleaned_data.get("imagen"))
+                # usuario.avatar.imagen = formulario.cleaned_data.get("imagen")
+                avatar.save()
+            
             formulario.save()
             return render(request, "app/Inicio.html")
     else:
