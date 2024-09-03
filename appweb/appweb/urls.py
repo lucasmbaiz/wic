@@ -7,7 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('app/', include('app.urls')),
     path('vbc/', include('vbc.urls')),
-    path('users/', include('users.urls'))
+    path('users/', include('users.urls')),
+    path('', include('vbc.urls'))
 ]
 # Para archivos estaticos
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
