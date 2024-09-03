@@ -22,8 +22,8 @@ def registrarServicio(request):
     return redirect('/')
 
 def edicionServicio(request, codigo):
-    servicio = ServicioList.objects.get(id=id)
-    return render(request, "edicionServicio.html", {"servicio": servicio})
+    servicio = ServicioList.objects.get(servicio=servicio)
+    return render(request, "edicionServicio.html", {"id": id})
 
 
 def editarServicio(request):
