@@ -1,14 +1,15 @@
 {% extends "app/base.html" %}
 
-{% block title %} Gestión de Servicios {% endblock %}
+{% load static %}
 
-{% block body %}
+{% block main %}
+
 <div class="row">
     <div class="col-md-4 offset-md-4">
         <h2>Edición de Servicios</h2>
         <div class="card">
             <div class="card-body">
-                <form action="/edicionServicio/" method="POST">{% csrf_token %}
+                <form action="/editarServicio/" method="POST">{% csrf_token %}
                     <div class="form-group">
                         <input type="text" id="txtid" name="txtid" value="{{servicio.id}}" class="form-control" placeholder="id"
                             minlength="6" maxlength="6" readonly required>
@@ -29,4 +30,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
+{% endblock main %}
