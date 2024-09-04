@@ -6,6 +6,10 @@ El proyecto nace a partir de mi actividad como asesor financiero (Idóneo CNV - 
 
 Lucas M. Baiz - Financial Advisor / CEO y Founder en wica. / Team Leader Customer Service en GRSA (Concesionario Oficial Toyota - Toyota Argentina SA). Estudiante de la comisión 57820 de CODERHOUSE
 
+# SUPER USUARIO
+lbaiz
+Ls430250
+
 # TECNOLOGÍA APLICADA
 
 LENGUAJE: PYTHON (Principal) / HTML / CSS 
