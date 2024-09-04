@@ -21,7 +21,38 @@ TEMPLATES: BOOTSTRAP
 5. CONTACTO: Un formulario de Django que registra la información de las consultas, registrando nombre, apellido, mail, telefono y consulta.
 6. MI CUENTA: Donde podés registrarte e iniciar sesión. Cambia cuando estas logueado, permitiendo observar "Cerrar Sesión" y "Editar"
 
+PATH
+
+# Páginas estáticas
+
+    path('Inicio/', views.inicio, name="Inicio"),
+    path('Servicios/', views.servicios, name="Servicios"),
+    path('Empresa/', views.empresa, name="Empresa"),
+    path('Suscripciones/', views.suscripciones, name="Suscripciones"),
+    path('Contacto/', views.contacto, name="Contacto"),
+    path('Activos/', views.activos, name="Activos"),
+    path('Clientes/', views.clientes, name="Clientes"),
+    path('Login/', views.login, name="Login"),
+
+# Formularios
+
+    path('formulario/', views.formulario, name='formulario'),
+    path('form_con_api/', views.form_con_api, name='FormConApi'),
+
+# Busquedas 
+
+    path('buscar/', views.buscar_form_con_api, name='buscar_form_con_api'),
+    path('buscar_form_con_api/', views.buscar_form_con_api, name='buscar_form_con_api'),
+
+# Registro / Login-out / Edición Usuario-Contraseña
+
+    path('login/', views.login_request, name='login')
+    path('register/', views.register, name='Register')
+    path('logout/', LogoutView.as_view(template_name="app/Inicio.html"), name="Logout")
+    path('editar_usuario/', views.editar_usuario, name="EditarUsuario")
+    path('cambiar_pass/', views.CambiarPassView.as_view(), name="CambiarPass")
+
 # AGRADECIMIENTOS
 
-CODERHOUSE - Equipo de la Comisión 57820 del curso de PYTHON / Por el contenido y el soporte. En especial a Diego Caceres (Tutor de Coder) que siempre estuvo para todas las dudas, me ha dado una mano muy grande.
+CODERHOUSE - Equipo de la Comisión 57820 del curso de PYTHON / Docente - Por el contenido y el soporte. En especial a Diego Caceres y Smailliw Arrillaga (Tutores de Coder) que siempre estuvieron para todas las dudas, me han dado una mano muy grande.
 
