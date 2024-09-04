@@ -1,4 +1,4 @@
-{% extends "./base.html" %}
+{% extends "app/base.html" %}
 
 {% block title %} Gestión de Servicios {% endblock %}
 
@@ -10,15 +10,15 @@
             <div class="card-body">
                 <form action="/edicionServicio/" method="POST">{% csrf_token %}
                     <div class="form-group">
-                        <input type="text" id="txtid" name="txtid" value="{{ServicioList.id}}" class="form-control" placeholder="id"
+                        <input type="text" id="txtid" name="txtid" value="{{servicio.id}}" class="form-control" placeholder="id"
                             minlength="6" maxlength="6" readonly required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="txtnombre" name="txtnombre" value="{{ServicioList.nombre}}" class="form-control" placeholder="Nombre"
+                        <input type="text" id="txtnombre" name="txtnombre" value="{{servicio.nombre}}" class="form-control" placeholder="nombre"
                             maxlength="50" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="numvaloracion" name="numvaloracion" value="{{ServicioList.valoracion}}" class="form-control" min="1" max="9"
+                        <input type="text" id="numvaloracion" name="numvaloracion" value="{{servicio.valoracion}}" class="form-control" min="1" max="9"
                             value="1" required>
                     </div>
                     <div class="form-group">

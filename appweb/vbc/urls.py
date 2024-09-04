@@ -4,7 +4,7 @@ from vbc import views
 urlpatterns = [
     path('', views.home),
     path('registrarServicio/', views.registrarServicio, name='registrarServicio'),
-    path('edicionServicio/', views.edicionServicio, name='edicionServicio'),
+    path('edicionServicio/<id>', views.edicionServicio, name='edicionServicio'),
     path('editarServicio/', views.editarServicio, name='editarServicio'),
-    path('eliminarServicio/', views.eliminarServicio, name='eliminarServicio')
+    path('eliminarServicio/<id>', views.eliminarServicio, name='eliminarServicio')
 ]

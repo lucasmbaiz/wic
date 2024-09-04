@@ -21,9 +21,9 @@ def registrarServicio(request):
         id=id, nombre=nombre, valoracion=valoracion)
     return redirect('/')
 
-def edicionServicio(request, codigo):
-    servicio = ServicioList.objects.get(servicio=servicio)
-    return render(request, "edicionServicio.html", {"id": id})
+def edicionServicio(request, id):
+    servicio = ServicioList.objects.get(id=id)
+    return render(request, "edicionServicio.html", {"servicio": servicio})
 
 
 def editarServicio(request):
@@ -32,18 +32,19 @@ def editarServicio(request):
     valoracion = request.POST['numvaloracion']
 
     servicio = ServicioList.objects.get(id=id)
-    ServicioList.nombre = nombre
-    ServicioList.valoracion = valoracion
-    ServicioList.save()
+    servicio.nombre = nombre
+    servicio.valoracion = valoracion
+    servicio.save()
 
-    messages.success(request, '¡Servicio actualizado!')
+    messages.success(request, '¡SERVICIO ACTUALIZADO!')
 
     return redirect('/')
 
+
 def eliminarServicio(request, id):
     servicio = ServicioList.objects.get(id=id)
-    ServicioList.delete()
+    servicio.delete()
 
-    messages.success(request, '¡Servicio eliminado!')
+    messages.success(request, '¡SERVICIO ELIMINADO!')
 
     return redirect('/')
