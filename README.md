@@ -50,11 +50,11 @@ PATH
 
 # Registro / Login-out / Edición Usuario-Contraseña
 
-    path('login/', views.login_request, name='login')
-    path('register/', views.register, name='Register')
-    path('logout/', LogoutView.as_view(template_name="app/Inicio.html"), name="Logout")
-    path('editar_usuario/', views.editar_usuario, name="EditarUsuario")
-    path('cambiar_pass/', views.CambiarPassView.as_view(), name="CambiarPass")
+    path('', views.home),
+    path('registrarServicio/', views.registrarServicio, name='registrarServicio'),
+    path('edicionServicio/<id>', views.edicionServicio, name='edicionServicio'),
+    path('editarServicio/', views.editarServicio, name='editarServicio'),
+    path('eliminarServicio/<id>', views.eliminarServicio, name='eliminarServicio')
 
 # AGRADECIMIENTOS
 
