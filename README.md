@@ -29,6 +29,8 @@ PATH
 
 # Páginas estáticas
 
+APLICACION APP
+
     path('Inicio/', views.inicio, name="Inicio"),
     path('Servicios/', views.servicios, name="Servicios"),
     path('Empresa/', views.empresa, name="Empresa"),
@@ -40,15 +42,21 @@ PATH
 
 # Formularios
 
+APLICACION APP
+
     path('formulario/', views.formulario, name='formulario'),
     path('form_con_api/', views.form_con_api, name='FormConApi'),
 
 # Busquedas 
 
+APLICACION APP
+
     path('buscar/', views.buscar_form_con_api, name='buscar_form_con_api'),
     path('buscar_form_con_api/', views.buscar_form_con_api, name='buscar_form_con_api'),
 
 # Registro / Login-out / Edición Usuario-Contraseña
+
+APLICACION USERS
 
     path('login/', views.login_request, name='login')
     path('register/', views.register, name='Register')
@@ -57,6 +65,8 @@ PATH
     path('cambiar_pass/', views.CambiarPassView.as_view(), name="CambiarPass")
 
 # CRUD
+
+APLICACIÓN VBC
 
     path('', views.home),
     path('registrarServicio/', views.registrarServicio, name='registrarServicio'),
