@@ -2,17 +2,9 @@
 
 El proyecto nace a partir de mi actividad como asesor financiero (Idóneo CNV - Comisión Nacional de Valores) y consiste en una startup financiera (QUE SE ENCUENTRA EN PROCESO DE REGISTRO DE MARCA) y que pretende ayudar a las personas a lograr su desarrollo financiero y así cumplir sus metas a través del ahorro, la planificación y la inversión. La idea central es que cada ahorrista y/o inversor pueda gestionar sus ahorros de una manera simple, a través de instrumentos financieros de las mejores empresas que cotizan a traves del mercado local e internacional.
 
-# LINK VIDEO DE PRESENTACION
-
-https://www.youtube.com/watch?v=jMHttB2UwRQ
-
 # AUTOR
 
 Lucas M. Baiz - Financial Advisor / CEO y Founder en wica. / Team Leader Customer Service en GRSA (Concesionario Oficial Toyota - Toyota Argentina SA). Estudiante de la comisión 57820 de CODERHOUSE
-
-# SUPER USUARIO
-lbaiz
-Ls430250
 
 # TECNOLOGÍA APLICADA
 
