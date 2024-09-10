@@ -69,8 +69,3 @@ APLICACIÓN VBC
     path('edicionServicio/<id>', views.edicionServicio, name='edicionServicio'),
     path('editarServicio/', views.editarServicio, name='editarServicio'),
     path('eliminarServicio/<id>', views.eliminarServicio, name='eliminarServicio')
-
-# AGRADECIMIENTOS
-
-CODERHOUSE - Equipo de la Comisión 57820 del curso de PYTHON / Docente - Por el contenido y el soporte. En especial a Diego Caceres y Smailliw Arrillaga (Tutores de Coder) que siempre estuvieron para todas las dudas, me han dado una mano muy grande.
-
